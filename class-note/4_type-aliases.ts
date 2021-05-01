@@ -19,5 +19,3 @@ type Mystring = string;
 
 var str: Mystring = 'hi';
 
-
-

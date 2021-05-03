@@ -9,7 +9,7 @@ type Person = {
     age: number;
 };
 
-var dozy: Person = {
+let dozy: Person = {
     name: '돋이',
     age: 31,
 };

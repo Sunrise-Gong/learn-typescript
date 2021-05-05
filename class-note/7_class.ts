@@ -1,6 +1,8 @@
 class Person_3 {
-    name: string;
-    age: number; // 타입을 정의해주지 않으면 아래와 같이 빨간줄(this.속성에 대한 타입 정의)
+    // this.속성에 대한 타입 정의 : 타입을 정의해주지 않으면 아래와 같이 빨간줄
+    private name: string;
+    public age: number;
+    readonly log: string;
 
     constructor(name: string, age: number) { // 할당되는 값들의 타입 정의
         this.name = name;

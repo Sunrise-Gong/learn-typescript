@@ -58,3 +58,20 @@ function logTextLength_1<T extends LengthType>(text: T):T { // 상속(확장)하
     console.log(text.length);
     return text;
 }
+
+//-------------------------------------------------- 제네릭의 타입 제한 3 - keyof
+
+interface shoppingItem {
+    name: string;
+    price: number;
+    stock: number;
+    10: string;
+}
+function getShoppingIthemOption<T extends keyof shoppingItem>(itemOption: T): T {
+    return itemOption;
+}
+getShoppingIthemOption('name')
+getShoppingIthemOption('price')
+getShoppingIthemOption('stock')
+
+getShoppingIthemOption(10);

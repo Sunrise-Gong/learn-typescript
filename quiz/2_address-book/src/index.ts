@@ -1,3 +1,4 @@
+//-------------------------------------------------- interface
 interface PhoneNumberDictionary {
   [phone: string]: {
     num: number;
@@ -9,10 +10,14 @@ interface Contact {
   address: string;
   phones: PhoneNumberDictionary;
 }
-
-// api
+let arr: Array<string> = ['a'];
+/*-------------------------------------------------- api
+이 함수의 역할은 전화번호부 데이터를 리턴하는 것입니다.
+이 페이크 api는 상수 contacts(전화번호부 데이터)를 promise 객체로 리턴합니다.
+*/
 // TODO: 아래 함수의 반환 타입을 지정해보세요.
-function fetchContacts(): Promise<any> {
+function fetchContacts(): Promise<Contact[]> {
+
   // TODO: 아래 변수의 타입을 지정해보세요.(Contact[])
   const contacts: Contact[] = [
     {
@@ -49,12 +54,14 @@ function fetchContacts(): Promise<any> {
       },
     },
   ];
-  return new Promise(resolve => { // 이 리턴값의 타입은 무엇일까?
+
+  return new Promise(resolve => { // 이 리턴값의 타입은 무엇일까? -> Promise<T>
     setTimeout(() => resolve(contacts), 2000);
   });
 }
 
-// main
+//-------------------------------------------------- main
+
 class AddressBook {
   // TODO: 아래 변수의 타입을 지정해보세요.
   contacts: Contact[] = [];

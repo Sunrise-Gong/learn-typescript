@@ -10,7 +10,12 @@ interface Contact {
   address: string;
   phones: PhoneNumberDictionary;
 }
-let arr: Array<string> = ['a'];
+
+enum PhoneType {
+  Home = 'home',
+  Office = 'office',
+  Studio = 'studio'
+}
 /*-------------------------------------------------- api
 이 함수의 역할은 전화번호부 데이터를 리턴하는 것입니다.
 이 페이크 api는 상수 contacts(전화번호부 데이터)를 promise 객체로 리턴합니다.
@@ -70,6 +75,7 @@ class AddressBook {
     this.fetchData();
   }
 
+
   fetchData(): void {
     fetchContacts().then(response => {
       this.contacts = response;
@@ -85,7 +91,7 @@ class AddressBook {
     return this.contacts.filter(contact => contact.address === address);
   }
 
-  findContactByPhone(phoneNumber: number, phoneType: string): Contact[] {
+  findContactByPhone(phoneNumber: number, phoneType: PhoneType): Contact[] {
     return this.contacts.filter(
       contact => contact.phones[phoneType].num === phoneNumber
     );

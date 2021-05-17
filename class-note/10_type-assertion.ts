@@ -4,4 +4,7 @@ var c;
 c = 'hello'
 var d = c as string;
 
-// DOM API 를 조작할 때 타입단언을 많이 사용합니다.
+// DOM API 조작
+//<div id="app">hi</div>
+var div = document.querySelector('div'); // or ('#app')
+

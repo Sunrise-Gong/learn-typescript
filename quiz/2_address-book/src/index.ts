@@ -1,24 +1,24 @@
 //-------------------------------------------------- interface
-interface PhoneNumberDictionary {
-  [phone: string]: {
-    num: number;
-  };
-}
-
-interface Contact {
-  name: string;
-  address: string;
-  phones: PhoneNumberDictionary;
-}
-
-enum PhoneType {
-  Home = 'home',
-  Office = 'office',
-  Studio = 'studio'
-}
+import { Contact, PhoneType } from './types'
+// 모듈화를 통해서 아래 정의들이 위 한줄로 끝남
+// interface PhoneNumberDictionary {
+//   [phone: string]: {
+//     num: number;
+//   };
+// }
+// interface Contact {
+//   name: string;
+//   address: string;
+//   phones: PhoneNumberDictionary;
+// }
+// enum PhoneType {
+//   Home = 'home',
+//   Office = 'office',
+//   Studio = 'studio'
+// }
 /*-------------------------------------------------- api
-이 함수의 역할은 전화번호부 데이터를 리턴하는 것입니다.
-이 페이크 api는 상수 contacts(전화번호부 데이터)를 promise 객체로 리턴합니다.
+'페이크 api 함수'의 역할: 전화번호부 데이터를 리턴
+상수 contacts(전화번호부 데이터 배열)를 'promise 객체'로 리턴합니다.
 */
 // TODO: 아래 함수의 반환 타입을 지정해보세요.
 function fetchContacts(): Promise<Contact[]> {
